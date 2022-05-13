@@ -24,27 +24,7 @@ uint8_t buff[] = {0,0};
 int incoming;
 uint8_t idx = 0;
 
-void check_mess(uint8_t *buff){
-  while(Serial.available()){
-    int tmp = 0;
-    while(1){
-      incoming = Serial.read();
-      if(incoming == '\t') break;
-      if(incoming == -1) continue;
-      if(incoming == '\n'){
-        buff[idx] = tmp;
-        idx = 0;
-        break;
-      }
-      tmp *= 10;
-      tmp += incoming-'0';
-    }
-    if(incoming!='\n'){
-      buff[idx] = tmp;
-      idx++;
-    }
-  }
-}
+void check_mess(uint8_t *buff);;
 
 void setup() {
   Serial.begin(115200);  //Initialize serial
@@ -90,5 +70,27 @@ void loop() {
       Serial.println("Problem updating channel. HTTP error code " + String(x));
     }
     lastTime = millis();
+  }
+}
+
+void check_mess(uint8_t *buff){
+  while(Serial.available()){
+    int tmp = 0;
+    while(1){
+      incoming = Serial.read();
+      if(incoming == '\t') break;
+      if(incoming == -1) continue;
+      if(incoming == '\n'){
+        buff[idx] = tmp;
+        idx = 0;
+        break;
+      }
+      tmp *= 10;
+      tmp += incoming-'0';
+    }
+    if(incoming!='\n'){
+      buff[idx] = tmp;
+      idx++;
+    }
   }
 }
