@@ -1024,8 +1024,8 @@ int main(void)
  8000980:	2120      	movs	r1, #32
  8000982:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
  8000986:	f000 fde3 	bl	8001550 <HAL_GPIO_TogglePin>
-	HAL_Delay(4000);
- 800098a:	f44f 607a 	mov.w	r0, #4000	; 0xfa0
+	HAL_Delay(10000);
+ 800098a:	f242 7010 	movw	r0, #10000	; 0x2710
  800098e:	f000 fb2d 	bl	8000fec <HAL_Delay>
   {
  8000992:	e792      	b.n	80008ba <main+0x1e>

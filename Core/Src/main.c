@@ -114,7 +114,7 @@ int main(void)
 	HAL_UART_Transmit(&huart1, (uint8_t*)buff, strlen(buff), HAL_MAX_DELAY);
 
 	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	HAL_Delay(4000);
+	HAL_Delay(10000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
