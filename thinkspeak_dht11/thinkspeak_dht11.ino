@@ -4,6 +4,8 @@
 
 const char* ssid = "TP-Link_99B2";   // network SSID  
 const char* password = "91283207";   // network password
+//const char* ssid = "Viettran";     
+//const char* password = "viettran123";  
 
 WiFiClient  client;
 
